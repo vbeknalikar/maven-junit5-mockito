@@ -16,5 +16,5 @@ cache:
 jobs:
   include:
     - stage: maven-junit5-mockito
-      script: cd $TRAVIS_BUILD_DIR && ./mvn test -B 
+      script: cd $TRAVIS_BUILD_DIR && mvn test -B 
   
