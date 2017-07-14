@@ -8,16 +8,13 @@ os:
   - linux
 
 before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
 cache:
   directories:
-    - $HOME/.gradle/caches/
-    - $HOME/.gradle/wrapper/
     - $HOME/.m2
 
 jobs:
   include:
     - stage: maven-junit5-mockito
-      script: cd $TRAVIS_BUILD_DIR/junit5-maven-consumer && ./mvnw clean test --update-snapshots
+      script: cd $TRAVIS_BUILD_DIR/junit5-maven-consumer && ./mvn test -B 
   
