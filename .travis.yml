@@ -1,0 +1,20 @@
+language: java
+sudo: false
+
+jdk:
+  - oraclejdk8
+
+os:
+  - linux
+
+before_cache:
+
+cache:
+  directories:
+    - $HOME/.m2
+
+jobs:
+  include:
+    - stage: maven-junit5-mockito
+      script: cd $TRAVIS_BUILD_DIR && mvn test -B 
+  
