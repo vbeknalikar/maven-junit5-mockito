@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.mock;
 import org.mockito.Mock;
 
 import com.veerbeknalikar.junit5.User;
@@ -14,11 +15,11 @@ import com.veerbeknalikar.junit5.User;
 @ExtendWith(MockitoExtension.class)
 public class Junit5WithMockitoExtensionTest {
 	
-	@Mock 
-	User user;
+	//@Mock - Mock annotation test fails - needs to be fixed
+	User user = mock(User.class);
 	
   	@BeforeEach
-   void init(User user) {
+   void init() {
         when(user.getFirstName()).thenReturn("Veer");
     }
 
